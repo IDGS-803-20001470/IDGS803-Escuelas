@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content%}
+{%from "_macros.html" import render_field%}
+
+<div class="container" style="padding-top: 20px;">
+    <div class="col" style="text-align: center;">
+        <div class="row">
+            <div class="col">
+                <a href="getAlumn">
+                    <div class="card" style="width: 18rem; height: 18rem; " >
+                        <img class="card-img-top"
+                            src="https://img.freepik.com/vector-gratis/colegial-pie-sobre-libros-levantando-mano-hablando-ilustracion-vector-plano-informe-tarea-casa-lectura-alumno-escuela-educacion-conocimiento_74855-8576.jpg?size=626&ext=jpg&ga=GA1.2.1506112047.1668390006&semt=sph"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">ADMINISTRAR ALUMNOS</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="getProfe">
+                    <div class="card" style="width: 18rem; height: 18rem;">
+                        <img class="card-img-top" src="https://img.freepik.com/vector-gratis/concepto-coleccion-maestros_52683-37601.jpg?w=996&t=st=1678762579~exp=1678763179~hmac=eaf7f2930427ff18400793c626647a45d66d0a61f01e667b6aeab2fbe9a6d089" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">ADMINISTRAR PROFESORES.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

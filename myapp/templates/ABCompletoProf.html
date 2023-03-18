@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content%}
+{%from "_macros.html" import render_field%}
+
+<div class="container" style="padding-top: 20px;">
+    <div class="col">
+        <div class="row" style="padding-bottom: 10px;">
+            <div class="col">
+                <a type="button" class="btn btn-outline-success" href="crearProf">Agregar Maestro</a>
+            </div>
+        </div>
+        <div class="row">
+           <table class="table table-striped table-bordered">
+            <thead>
+                <tr class="tr_head">
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>materia</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for profesor in profesores %}
+                <tr>
+                    <td>{{profesor[1]}}</td>
+                    <td>{{profesor[2]}}</td>
+                    <td>{{profesor[4]}}</td>
+                    <td>{{profesor[5]}}</td>
+                    <td >
+                        <a href="modificarProf?id={{profesor[0]}}" class="btn btn-outline-primary"><i class="bi bi-pen-fill"></i>
+                            Editar</a>
+                    </td>
+                    <td >
+                        <a href="eliminarProf?id={{profesor[0]}}" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i>
+                            Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+           </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

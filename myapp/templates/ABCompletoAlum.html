@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content%}
+{%from "_macros.html" import render_field%}
+
+<div class="container" style="padding-top: 20px;">
+    <div class="col">
+        <div class="row" style="padding-bottom: 10px;">
+            <div class="col">
+                <a type="button" class="btn btn-outline-success" href="crearAlum">Agregar Alumno</a>
+            </div>
+        </div>
+        <div class="row">
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr class="tr_head">
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alumno in alumnos %}
+                    <tr>
+                        <td>{{alumno[1]}}</td>
+                        <td>{{alumno[2]}}</td>
+                        <td>{{alumno[4]}}</td>
+                        <td>
+                            <a href="modificarAlumn?id={{alumno[0]}}" class="btn btn-outline-primary"><i
+                                    class="bi bi-pen-fill"></i>
+                                Editar</a>
+                        </td>
+                        <td>
+                            <a href="eliminarAlumn?id={{alumno[0]}}" class="btn btn-outline-danger"><i
+                                    class="bi bi-trash-fill"></i>
+                                Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
